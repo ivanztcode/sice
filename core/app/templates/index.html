@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+
+{% block titulo %}{% endblock titulo %}
+
+{% block contenido %}
+
+<style>
+    .card {
+      background-color: #35b7ca;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      width: 150px;
+      height: 130px;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.7); /* Aplica una sombra leve */
+      transition: background-color 0.5s ease; /* Agrega una transición de 0.5 segundos */
+    }
+
+    .card:hover {
+        background-color: #108da0; /* Cambia el color de fondo en hover */
+      }
+    
+    .card-title {
+      text-align: center;
+      margin-top: 10px;
+      color: white;
+    }
+
+    .white-icon{
+        color: white;
+    }
+
+    .h5{
+        color: white;
+    }
+
+    .card-link{
+        text-decoration: none;
+    }
+  </style>
+    <div class="container">
+        <div class="row justify-content-center justify-content-lg-start">
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <a href="{% url 'addProveedor' %}" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="fa-solid fa-person white-icon" style="font-size: 50px;"></i>
+                        </div>
+                        <h5 class="card-title">
+                            Agregar Proveedor
+                        </h5>
+                    </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <a href="{% url 'addProveedor' %}" class="card-link">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="text-center">
+                              <i class="fa-brands fa-product-hunt white-icon" style="font-size: 50px;"></i>
+                          </div>
+                          <h5 class="card-title">
+                              Agregar Producto
+                          </h5>
+                      </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-12">
+                <a href="" class="card-link">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="text-center">
+                              <i class="fa-solid fa-person white-icon" style="font-size: 50px;"></i>
+                          </div>
+                          <h5 class="card-title">
+                              Generar Venta
+                          </h5>
+                      </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-12">
+                <a href="{% url 'addProveedor' %}" class="card-link">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="text-center">
+                              <i class="fa-solid fa-person white-icon" style="font-size: 50px;"></i>
+                          </div>
+                          <h5 class="card-title">
+                              Agregar Proveedor
+                          </h5>
+                      </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-12">
+                <a href="{% url 'addProveedor' %}" class="card-link">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="text-center">
+                              <i class="fa-solid fa-person white-icon" style="font-size: 50px;"></i>
+                          </div>
+                          <h5 class="card-title">
+                              Agregar Proveedor
+                          </h5>
+                      </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <a href="{% url 'addProveedor' %}" class="card-link">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="text-center">
+                              <i class="fa-solid fa-person white-icon" style="font-size: 50px;"></i>
+                          </div>
+                          <h5 class="card-title">
+                              Agregar Proveedor
+                          </h5>
+                      </div>
+                  </div>
+                </a>
+              </div>
+  
+            
+            
+
+
+        </div>
+    </div>
+
+
+{% endblock contenido %}

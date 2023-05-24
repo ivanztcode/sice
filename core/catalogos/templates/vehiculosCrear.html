@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}Agregar Vehiculo{% endblock titulo %}
+
+{% block contenido %}
+<h3 class="text-center">Formulario de Vehiculo</h3>
+<form action="" method="POST" class="card p-3  mt-5" autocomplete="off">
+    {%csrf_token%}
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3" >
+            {{form.NIV|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3" >
+            {{form.noMotor|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3" >
+            {{form.marca|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3" >
+            {{form.linea|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" >
+            {{form.modelo|as_crispy_field}}
+        </div>
+        
+    </div>
+    
+    
+<input class="btn btn-success float-end btn-dark" type="submit" value="Continuar" {% if "ok" in request.GET %}disabled{% endif %}{% if "error" in request.GET%}disabled{% endif %} >
+</form>
+
+    {% if "ok" in request.GET %}
+        <div class="alert alert-success mt-5" role="alert">
+            <strong>El mensaje se ha enviado correctamente</strong>
+        </div>
+    
+    {% endif %}
+
+    {% if "error" in request.GET %}
+        <div class="alert alert-danger mt-5" role="alert">
+            <strong>El mensaje no se ha enviado correctamente</strong>
+        </div>
+    
+    {% endif %}
+
+
+{% endblock contenido %}
+
+

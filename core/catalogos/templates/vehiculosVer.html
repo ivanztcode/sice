@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Ver Vehiculo{% endblock titulo %}
+
+
+{% block contenido %}
+
+    <div class="container my-4">
+        <h1>Tabla de Vehículos</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NIV</th>
+                        <th>Numero de Motor</th>
+                        <th>Marca</th>
+                        <th>Linea</th>
+                        <th>Modelo</th>
+                        <th>Opciones</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vehiculo in vehiculos %} 
+                    <tr>
+                        <td> {{vehiculo.id}} </td>
+                        <td> {{vehiculo.NIV}} </td>
+                        <td> {{vehiculo.noMotor}} </td>
+                        <td> {{vehiculo.marca}} </td>
+                        <td> {{vehiculo.linea}} </td>
+                        <td> {{vehiculo.modelo}} </td>
+                        <td>
+                            <a href="" class="fa-solid fa-pen-to-square"></a>
+                            <a href="" class="fa-solid fa-trash"></a>
+            
+            
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock contenido %}

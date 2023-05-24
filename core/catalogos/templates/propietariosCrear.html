@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block titulo %}Captura de propietarios{% endblock titulo %}
+
+{% block contenido %}
+
+<h3 class="text-center">Formulario de Propietario</h3>
+
+<form action="" method="POST" class="card p-3  mt-5" autocomplete="off">
+        {%csrf_token%}
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.RFC|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.nombre|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.apPaterno|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.apMaterno|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.email|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.CURP|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.calle|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.colonia|as_crispy_field}}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.municipio|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.CP|as_crispy_field}}
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" >
+                {{form.edad|as_crispy_field}}
+            </div>
+        </div>
+<input class="btn btn-success float-end btn-dark" type="submit" value="Continuar" {% if "ok" in request.GET %}disabled{% endif %}{% if "error" in request.GET%}disabled{% endif %} >
+</form>
+
+        {% if "ok" in request.GET %}
+            <div class="alert alert-success mt-5" role="alert">
+                <strong>El mensaje se ha enviado correctamente</strong>
+            </div>
+        
+        {% endif %}
+
+        {% if "error" in request.GET %}
+            <div class="alert alert-danger mt-5" role="alert">
+                <strong>El mensaje no se ha enviado correctamente</strong>
+            </div>
+        
+        {% endif %}
+
+
+
+
+{% endblock contenido %}
+

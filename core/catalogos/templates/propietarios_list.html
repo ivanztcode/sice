@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Listado de Propietarios{% endblock titulo %}
+
+{% block contenido %}
+    {% if propietarios %}
+        <table>
+            <thead>
+                <tr>
+                    <td>RFC</td>
+                    <td>nombre</td>
+                    <td>Apellido paterno</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in propietarios  %}
+                <tr>
+                    <td>{{item.RFC}} </td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apPaterno}}</td>
+                    <td>{{item.apMaterno}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.CURP}}</td>
+                    <td>{{item.calle}}</td>
+                    <td>{{item.colonia}}</td>
+                    <td>{{item.municipio}}</td>
+                    <td>{{item.CP}}</td>
+                    <td>{{item.edad}}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    {% else %}
+        <h1>No hay datos </h1>
+    {% endif %}
+
+
+{% endblock  %}

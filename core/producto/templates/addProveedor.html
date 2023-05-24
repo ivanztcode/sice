@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %} Añadir Proveedor {% endblock titulo %}
+
+
+{% block contenido %}
+
+<h3 class="text-center">Formulario de Proveedor</h3>
+<form action="" method="POST" class="card p-3 mt-5" autocomplete="off" novalidate>
+    {%csrf_token%}
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.nombre|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.direccion|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.correo_electronico|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.telefono|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            {{form.pagina_web|as_crispy_field}}
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            {{form.notas|as_crispy_field}}
+        </div>
+    </div>
+
+    <input class="btn btn-info float-end btn-info" type="submit" value="Continuar" {% if "ok" in request.GET %}disabled{% endif %}{% if "error" in request.GET%}disabled{% endif %} >
+
+</form>
+{% endblock contenido %}
+
+

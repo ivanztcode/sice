@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %} Añadir Producto {% endblock titulo %}
+
+
+{% block contenido %}
+
+<h3 class="text-center">Formulario de Producto</h3>
+
+<form action="" method="POST" class="card p-3 mt-5" autocomplete="off" novalidate>
+    {%csrf_token%}
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            {{form.codigo_barras|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            {{form.nombre_producto|as_crispy_field}}
+        </div>
+       
+     
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            {{form.descripcion|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.precio_compra|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.precio_venta|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.proveedor|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.fecha_caducidad|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.stock|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.categoria|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.imagen|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.marca|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.presentacion|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.descuento|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.ubicacion|as_crispy_field}}
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            {{form.unidades|as_crispy_field}}
+        </div>
+    </div>
+
+    <input class="btn btn-primary float-end btn-primary" type="submit" value="Continuar" {% if "ok" in request.GET %}disabled{% endif %}{% if "error" in request.GET%}disabled{% endif %} >
+</form>
+
+    
+{% endblock contenido %}

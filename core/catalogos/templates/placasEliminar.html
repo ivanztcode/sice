@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Eliminar Placa{% endblock titulo %}
+
+
+{% block contenido %}
+    <form action="" method="post">
+        {% csrf_token %}
+    <h2>ESTAS ELIMINANDO EL SIGUIENTE PROPIETARIO: </h2>
+    <!-- <h4>{{placas.RFC}}</h4>
+    <h4>{{placas.RFC}}</h4>
+    <h4>{{placas.RFC}}</h4>
+    <h4>{{placas.RFC}}</h4> -->
+    <h2>¿Estas segur(a) de eliminar el propietario {{placas.nombre}}?</h2>
+    <button type="submit" class="btn btn-danger">si, a la chingada </button>
+    <a href="{% url "placasVer" %}" class="btn btn-success">Cancelar</a>
+    </form>
+{% endblock contenido %}
